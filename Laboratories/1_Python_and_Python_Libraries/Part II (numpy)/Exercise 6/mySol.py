@@ -21,7 +21,7 @@ def numpyVersion(N, data):
 
         for deltaX in range(-2, 3):
             for deltaY in range(-2, 3):
-                if x + deltaX >= 0 and x + deltaX < N and y + deltaY >= 0 and deltaY < N:
+                if x + deltaX >= 0 and x + deltaX < N and y + deltaY >= 0 and y + deltaY < N:
                     matrix[x + deltaX, y + deltaY] += 0.2
 
         for deltaX in range(-1, 2):
