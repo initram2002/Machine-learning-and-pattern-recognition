@@ -5,14 +5,17 @@ import sklearn.datasets, numpy, matplotlib
 def loadIris():
     return sklearn.datasets.load_iris()['data'].T, sklearn.datasets.load_iris()['target']
 
+
 def computeMuC(D):
     mu = columnVector(D.mean(1))
     C = 1/(D.shape[1]) * (D - mu) @ (D - mu).T
     
     return mu, C
 
+
 def columnVector(x):
     return x.reshape((x.size, 1))
+
 
 def computePCA(D, m):
     mu, C = computeMuC(D)
@@ -21,8 +24,10 @@ def computePCA(D, m):
 
     return P 
 
+
 def applyPCA(P, D):
-    return P.T @ D  
+    return P.T @ D 
+ 
 
 def main():
     D, L = loadIris()
